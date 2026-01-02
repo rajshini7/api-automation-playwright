@@ -1,0 +1,6 @@
+node.js>=20
+express==5.2.1
+@playwright/test==1.57.0
+typescript==5.4.0
+@types/node==25.0.3
+dotenv
