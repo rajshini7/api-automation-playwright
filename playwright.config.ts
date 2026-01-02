@@ -2,10 +2,17 @@ import { defineConfig } from "@playwright/test";
 
 export default defineConfig({
   testDir: "./tests",
-
-  // CI-safe defaults
   retries: process.env.CI ? 1 : 0,
-  workers: process.env.CI ? 1 : 1,
+  workers: 1,
+
+  globalSetup: "./global-setup.cjs",
+
+  webServer: {
+    command: "npm run server",
+    port: 3000,
+    reuseExistingServer: !process.env.CI,
+    timeout: 60_000,
+  },
 
   reporter: [
     ["list"],
@@ -13,6 +20,6 @@ export default defineConfig({
   ],
 
   use: {
-    baseURL: process.env.BASE_URL || "http://localhost:3000"
-  }
+    baseURL: "http://localhost:3000",
+  },
 });
