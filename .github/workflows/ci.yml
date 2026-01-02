@@ -33,17 +33,14 @@ jobs:
       - name: Install Playwright
         run: npx playwright install --with-deps
 
-      # 5️⃣ Start API server (background)
-      - name: Start API server
-        run: |
-          npm run server &
-          sleep 5
+      # ❌ REMOVED: manual API server start
+      # Playwright webServer handles this
 
-      # 6️⃣ Run API automation tests
+      # 5️⃣ Run API automation tests
       - name: Run API tests
         run: npm run test:api
 
-      # 7️⃣ Upload Playwright report (always)
+      # 6️⃣ Upload Playwright report (always)
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v4
