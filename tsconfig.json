@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+
+    /* Node-compatible output */
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+
+    /* Type safety */
+    "strict": true,
+
+    /* Interop */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* Required types */
+    "types": ["node", "@playwright/test"],
+
+    /* Stability */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+
+  "include": [
+    "tests/**/*.ts",
+    "utils/**/*.ts",
+    "playwright.config.ts"
+  ]
+}

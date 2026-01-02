@@ -1,0 +1,21 @@
+{
+  "name": "api-automation",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "server": "node server/server.cjs",
+    "test": "playwright test",
+    "test:api": "playwright test tests/api",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^25.0.3",
+    "typescript": "^5.4.0"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
